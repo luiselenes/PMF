@@ -1,0 +1,2 @@
+class Divice < ApplicationRecord
+end
