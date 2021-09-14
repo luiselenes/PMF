@@ -1,2 +1,0 @@
-class Divice < ApplicationRecord
-end
