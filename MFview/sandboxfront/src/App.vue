@@ -1,34 +1,47 @@
 <template>
-  <div>
-    <table>
-      <tbody>
-        <tr v-for="ran in random" :key="ran.id">
-            <td>{{ ran.value }}</td>
-        </tr>
-    </tbody>
-  </table>
+  <div class="hello">
+    <h1>hollaaa</h1>
+    <button>{{btnback}} </button>
+    <button>{{btnnext}} </button>
   </div>
 </template>
 
 <script>
-import axios from 'axios'
 export default {
-  data(){
-    return{
-      random:null
-    }
-  },
-  mounted(){
-    this.getRandom();
-  },
-  methods:{
-    getRandom(){
-      axios
-      .get('https://api.chucknorris.io/jokes/random').then(response => {console.log(response)
-      this.random=response.data
-      })
-      .catch(e => console.log(e))
+  name: 'msg',
+  data () {
+    return {
+      btnnext: 'Recorrido Anteriooor',
+      btnback: 'Recorrido Siguiente'
     }
   }
+
 }
 </script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
+h1, h2 {
+  font-weight: normal;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+li {
+  display: inline-block;
+  margin: 0 10px;
+}
+a {
+  color: #42b983;
+}
+button{
+  font-size: 30px;
+  color:black;
+  background:lightgray;
+  display: inline-block;
+  vertical-align: auto;
+  text-align: center;
+  padding: 15px;
+}
+</style>
