@@ -82,5 +82,5 @@ test:
 production:
   <<: *default
   database: MFapi_production
-  username: paloverde
-  password: paloverde
+  username: MFapi
+  password: <%= ENV['MFAPI_DATABASE_PASSWORD'] %>
