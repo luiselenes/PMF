@@ -16,13 +16,12 @@ ActiveRecord::Schema.define(version: 2021_09_20_175941) do
   enable_extension "plpgsql"
 
   create_table "agricultural_companies", force: :cascade do |t|
-    t.string "code_greenhouse", default: "", null: false
-    t.float "area_grooves", default: 0.0, null: false
-    t.bigint "agricultural_companies_id", null: false
-    t.boolean "status", default: true
+    t.string "name", default: "", null: false
+    t.string "address", default: "", null: false
+    t.string "phone", default: "", null: false
+    t.string "responsable", default: "", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["agricultural_companies_id"], name: "index_agricultural_companies_on_agricultural_companies_id"
   end
 
   create_table "devices", force: :cascade do |t|
@@ -73,7 +72,6 @@ ActiveRecord::Schema.define(version: 2021_09_20_175941) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "agricultural_companies", "agricultural_companies", column: "agricultural_companies_id"
   add_foreign_key "devices", "agricultural_companies", column: "agricultural_companies_id"
   add_foreign_key "green_houses", "agricultural_companies", column: "agricultural_companies_id"
   add_foreign_key "routes", "devices", column: "devices_id"
