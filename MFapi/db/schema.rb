@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_10_224851) do
+ActiveRecord::Schema.define(version: 2021_09_20_175941) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,9 +25,10 @@ ActiveRecord::Schema.define(version: 2021_09_10_224851) do
   end
 
   create_table "devices", force: :cascade do |t|
-    t.string "name", default: "", null: false
-    t.float "capacity", default: 0.0, null: false
+    t.string "name"
+    t.float "capacity"
     t.bigint "agricultural_companies_id", null: false
+    t.boolean "status", default: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["agricultural_companies_id"], name: "index_devices_on_agricultural_companies_id"
@@ -37,6 +38,7 @@ ActiveRecord::Schema.define(version: 2021_09_10_224851) do
     t.string "code_greenhouse", default: "", null: false
     t.float "area_grooves", default: 0.0, null: false
     t.bigint "agricultural_companies_id", null: false
+    t.boolean "status", default: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["agricultural_companies_id"], name: "index_green_houses_on_agricultural_companies_id"
@@ -44,6 +46,7 @@ ActiveRecord::Schema.define(version: 2021_09_10_224851) do
 
   create_table "images", force: :cascade do |t|
     t.string "image", default: "", null: false
+    t.boolean "status", default: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -53,6 +56,7 @@ ActiveRecord::Schema.define(version: 2021_09_10_224851) do
     t.float "latitude", default: 0.0, null: false
     t.float "longitud", default: 0.0, null: false
     t.bigint "devices_id", null: false
+    t.boolean "status", default: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["devices_id"], name: "index_routes_on_devices_id"
@@ -63,6 +67,7 @@ ActiveRecord::Schema.define(version: 2021_09_10_224851) do
     t.string "password", default: "", null: false
     t.string "role", default: "", null: false
     t.string "description", default: "", null: false
+    t.boolean "status", default: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
