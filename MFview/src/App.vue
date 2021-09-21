@@ -6,11 +6,11 @@
             <h1 class="headercompany">Compañia</h1><br>
              <div class="labelsinrow">
                 <span><label id="lgreenhouse">Invernadero: </label></span>
-                <span><label id="lgreenhousechange">Invernadero</label></span>
+                <span><label id="lgreenhousechange">{{lgreenhousechange}}</label></span>
                 <span><label id="ldate">Fecha y hora: </label></span>
-                <span><label id="ldatechange">Fecha y hora</label></span>
+                <span><label id="ldatechange">{{ldatechange}}</label></span>
                 <span><label id="lcubot">Cubot: </label></span>
-                <span><label id="lcubotchange">Cubot</label></span>
+                <span><label id="lcubotchange">{{lcubotchange}}</label></span>
              </div>
       </header>
         <div class="imgrecorrido">
@@ -33,7 +33,10 @@ export default {
     return {
       btnback: 'Recorrido Anterior',
       btnhome: 'Regresar',
-      btnnext: 'Recorrido Siguiente'
+      btnnext: 'Recorrido Siguiente',
+      lgreenhousechange: 'dato invernadero ',
+      ldatechange: 'datos fecha',
+      lcubotchange: 'datos cubot'
     }
   }
 }
@@ -111,11 +114,17 @@ margin-right: 70px;
   float: left;
   margin-left: 5px;
 }
+#ldate{
+  margin-right: 5px;
+}
+#ldatechange{
+  margin-right: 80px;
+}
 #lcubot{
   float: right;
+  margin-right: 0px;
 }
 #lcubotchange{
   float: right;
-  margin-right: 30px;
 }
 </style>
