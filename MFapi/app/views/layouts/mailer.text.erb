@@ -1,1 +1,28 @@
-<%= yield %>
+<%= form_with(model: image, local:true,multipart: true) do |form| %>
+  <%if post.errors.any?%>
+    <div id="error_explanation">
+      <h1> <%= pluralize(image.errors.count, "error") </h1>%>
+      <UL>
+        <%image.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+      </UL>
+    </div>
+    <% end %>
+
+
+
+
+<div class="field">
+  <%= form.label :image %>
+  <%= form.file_field :image %>
+</div>
+<div class="field">
+  <%= form.label :image_route %>
+  <%= form.file_field :image_route %>
+</div>
+<div class="actions">
+  <%= form.submit%>
+ 
+</div>
+<% end %>
