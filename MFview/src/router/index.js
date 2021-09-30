@@ -19,6 +19,16 @@ export default new Router({
       path: '/report',
       name: 'reposte',
       component: () => import('../components/Reporte.vue')
+    },
+    {
+      path: '/signup',
+      name: 'signup',
+      component: () => import('../components/Signup.vue')
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: () => import('../components/Login.vue')
     }
   ]
 })
