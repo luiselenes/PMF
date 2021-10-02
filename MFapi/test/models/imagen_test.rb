@@ -1,6 +1,6 @@
 require "test_helper"
 
-class ImageTest < ActiveSupport::TestCase
+class ImagenTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

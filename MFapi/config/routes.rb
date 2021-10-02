@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
+  resources :imagens
   root "main#home"
   devise_for :users
   resources :users
   resources :routes
-  resources :images
   resources :devices
   resources :green_houses
   resources :agricultural_companies

@@ -1,19 +1,38 @@
 <template>
-    <div class="Imagenes">
+    <div class="image">
         <form action="">
-            <!-- <input type="file" name='route[image_route]'/>
-            <input type="file" name= 'route[image_route]'/>
-            <input type="file" @change= "onFileSelected">  -->
-            <label for="">height </label>
-            <input type="text" id="height">
-            <label for="latitude">latitude</label>
-            <input type="text" id="latitude">
-            <label for="longitud">longitud </label>
-            <input ype="text" id="longitud">
-            <label for="device">device</label>
-            <input type="text" id="device">
-            <label for="onFileSelected">onFileSelected</label>  
-            <input type="file" @change="onFileSelected">
+          <tbody>
+            <ul>
+                <li>
+                    <h3>{{ab.id}}</h3>
+                </li>
+            </ul>
+            </tbody>
         </form>
     </div>
 </template> 
+
+<script>
+    const SERVER_URL = "27.0.0.1:3000/imagens/1";
+    import axios from "axios"
+    export default{
+        data(){
+            return{ 
+                ab:null
+                }    
+        },
+        mounted(){
+            this.getTodos();
+        },
+        methods: {
+            async getTodos(){
+           const res= await axios.get(SERVER_URL);
+            this.ab = res.data;
+           //.then(response =>{
+             //   this.ab =response.data
+            }
+        }
+    
+}
+     
+</script>
